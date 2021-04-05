@@ -9,9 +9,11 @@ intersection.addEventListener("click", function() {
   toggle(intersection, "intersection-selected");
   toggle(approaches, "hide");
 
+  // collapse all intersections 
   if (!intersection.classList.contains("intersection-selected")) {
     intersectionPlusIcon.classList.remove("intersection-plus-selected");
     collapseAllIntersections();
+    changeAllSign("+")
     const text = intersectionPlusIcon.firstChild;
     text.nodeValue = '++';
   }
@@ -25,10 +27,12 @@ intersectionPlusIcon.addEventListener("click", function() {
     approaches.classList.remove("hide");
     intersection.classList.add("intersection-selected");
     expandAllIntersections();
+    changeAllSign("-")
   } else {
     approaches.classList.add("hide");
     intersection.classList.remove("intersection-selected");
     collapseAllIntersections();
+    changeAllSign("+")
   }
 
   text.nodeValue = text.nodeValue === '++' ? "--" : "++";
@@ -49,7 +53,7 @@ document.querySelectorAll(".approach").forEach(function(item) {
   });
 });
 
-// Helper function for toggle
+// Helper functions
 function toggle(elem, style) {
   if (elem.classList.contains(style)) {
     elem.classList.remove(style);
@@ -83,5 +87,13 @@ function collapseAllIntersections() {
     if (!depature.classList.contains("hide")) {
       depature.classList.add("hide");
     }
+  });
+}
+
+function changeAllSign(sign) {
+  const approachPlusMinusIcon = document.querySelectorAll(".approach-plus-minus");
+  approachPlusMinusIcon.forEach(function(item) {
+    value = item.firstChild;
+    value.nodeValue = sign;
   });
 }
