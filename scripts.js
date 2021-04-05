@@ -11,19 +11,41 @@ intersection.addEventListener("click", function() {
 
 intersectionPlusIcon.addEventListener("click", function() {
   toggle(intersectionPlusIcon, "intersection-plus-selected");
-  approaches.classList.remove("hide");
+  const text = intersectionPlusIcon.firstChild
+  if (text.nodeValue === '++') {
+    approaches.classList.remove("hide");
+    intersection.classList.add("intersection-selected");
 
-  document.querySelectorAll(".approach-children").forEach(function(approach) {
-    if (!approach.classList.contains("approach-selected")) {
-      approach.classList.add("approach-selected");
-    }
-  });
+    document.querySelectorAll(".approach-children").forEach(function(approach) {
+      if (!approach.classList.contains("approach-selected")) {
+        approach.classList.add("approach-selected");
+      }
+    });
 
-  document.querySelectorAll(".departures-container").forEach(function(depature) {
-    if (depature.classList.contains("hide")) {
-      depature.classList.remove("hide");
-    }
-  });
+    document.querySelectorAll(".departures-container").forEach(function(depature) {
+      if (depature.classList.contains("hide")) {
+        depature.classList.remove("hide");
+      }
+    });
+
+    text.nodeValue = "--";
+  } else {
+    approaches.classList.add("hide");
+    intersection.classList.remove("intersection-selected");
+    document.querySelectorAll(".approach-children").forEach(function(approach) {
+      if (approach.classList.contains("approach-selected")) {
+        approach.classList.remove("approach-selected");
+      }
+    });
+
+    document.querySelectorAll(".departures-container").forEach(function(depature) {
+      if (!depature.classList.contains("hide")) {
+        depature.classList.add("hide");
+      }
+    });
+
+    text.nodeValue = "++";
+  }
 });
 
 // logic for approaches
