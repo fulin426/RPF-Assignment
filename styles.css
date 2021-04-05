@@ -1,0 +1,156 @@
+/* black: #2b2b2b */
+
+/* main blue: #54A0C7 */
+/* secondary blue: #3f748e */
+/* light grey #636363 */
+
+/* main green: #6aaa5d */
+/* secondary green: #628461 */
+/* third green: #7f9570 */
+
+/* remove default styles */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* common styles */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+/* intersection styles */
+.intersection-wrapper {
+  display: flex;
+}
+
+.intersection, .intersection-plus {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.intersection-plus:hover {
+  background-color: #3f748e;
+}
+
+.intersection-plus-selected {
+  background-color: #3f748e;
+}
+
+.intersection {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.intersection:hover {
+  background-color: #54A0C7;
+}
+
+.intersection-plus {
+  width: 60px;
+}
+
+.intersection-selected {
+  background-color: #54A0C7;
+}
+
+/* approach styles */
+.approach-children {
+  cursor: pointer;
+  display: flex;
+  flex-grow: 1;
+  padding: 16px;
+  color: #ffffff;
+  background-color: #636363;
+}
+
+.approach-children:hover {
+  background-color: #6aaa5d;
+}
+
+.approach-selected {
+  background-color: #6aaa5d;
+}
+
+.approaches-container {
+  display: flex;
+}
+
+.approach-item-container {
+  display: flex;
+}
+
+.approaches-side {
+  width: 24px;
+  background-color: #3f748e;
+}
+
+.approaches-wrapper {
+  flex-grow: 1;
+}
+
+.approach-name-number {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.approach-plus-minus {
+  width: 32px;
+}
+
+.approach-map-icon { 
+  color: #ffffff;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #636363;
+}
+
+.departures-container {
+  display: flex;
+}
+
+.departures-side {
+  width: 24px;
+  background-color: #628461;
+}
+
+.departures-list {
+  flex-grow: 1;
+}
+
+.departure-item {
+  display: flex;
+  padding: 16px;
+  background-color: #7f9570;
+  color: #ffffff;
+}
+
+.departure-name {
+  flex-grow: 1;
+}
+
+.departure-volume {
+  text-align: center;
+  width: 96px;
+}
+
+.departure-percent {
+  width: 32px;
+}
