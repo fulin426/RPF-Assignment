@@ -27,7 +27,7 @@ ul {
 }
 
 .container {
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
   margin-top: 32px;
 }
@@ -37,7 +37,8 @@ ul {
   display: flex;
 }
 
-.intersection, .intersection-plus {
+.intersection,
+.intersection-plus {
   background-color: #2b2b2b;
   color: #ffffff;
   cursor: pointer;
@@ -59,7 +60,7 @@ ul {
 }
 
 .intersection:hover {
-  background-color: #54A0C7;
+  background-color: #54a0c7;
 }
 
 .intersection-plus {
@@ -67,7 +68,7 @@ ul {
 }
 
 .intersection-selected {
-  background-color: #54A0C7;
+  background-color: #54a0c7;
 }
 
 /* approach styles */
@@ -115,7 +116,7 @@ ul {
   width: 32px;
 }
 
-.approach-map-icon { 
+.approach-map-icon {
   color: #ffffff;
   padding-left: 8px;
   padding-right: 8px;
