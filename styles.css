@@ -16,6 +16,10 @@ ul {
 }
 
 /* common styles */
+* {
+  box-sizing: border-box;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -27,9 +31,15 @@ ul {
 }
 
 .container {
-  max-width: 600px;
+  display: flex;
   margin: 0 auto;
   margin-top: 32px;
+  padding: 24px;
+}
+
+.intersection-container {
+  width: 600px;
+  margin-right: 32px;
 }
 
 /* intersection styles */
@@ -155,4 +165,94 @@ ul {
 
 .departure-percent {
   width: 32px;
+}
+
+/* graphic styles */
+.graphic-container {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.graphic-top-container,
+.graphic-middle-container,
+.graphic-bottom-container {
+  display: flex;
+}
+
+.graphic-top-left,
+.graphic-top-right,
+.graphic-bottom-left,
+.graphic-bottom-right {
+  width: 225px;
+}
+
+.graphic-top-road-left,
+.graphic-top-road-right,
+.graphic-bottom-road-left,
+.graphic-bottom-road-right {
+  width: 75px;
+}
+
+.graphic-middle-left,
+.graphic-middle-right {
+  height: 150px;
+  width: 225px;
+}
+
+.graphic-middle-road {
+  height: 150px;
+  width: 150px;
+}
+
+/* top container */
+.graphic-top-left,.graphic-top-road-right, .graphic-top-right {
+ height: 180px;
+}
+.graphic-top-left {
+  border-right: 10px solid rgba(0, 255, 0, 0.6);
+  border-bottom: 10px solid rgba(0, 255, 0, 0.5);;
+  border-bottom-right-radius: 24px;
+}
+
+.graphic-top-road-right {
+  border-left: 2px dashed black;
+}
+
+.graphic-top-right {
+  border-left: 10px solid rgba(0, 255, 0, 0.8);
+  border-bottom: 10px solid rgba(0, 255, 0, 1.0);
+  border-bottom-left-radius: 24px;
+}
+
+/* middle container */
+.graphic-middle-left, .graphic-middle-right {
+  height: 150px;
+}
+
+.graphic-middle-top-road, .graphic-middle-bottom-road {
+ height: 75px;
+}
+
+.graphic-middle-top-road {
+  border-bottom: 2px dashed black;
+}
+
+/* bottom container */
+.graphic-bottom-container {
+  height: 180px;
+}
+
+.graphic-bottom-left {
+  border-top: 10px solid rgba(230, 230, 0, 1);
+  border-right: 10px solid rgba(255, 0, 0, 1);
+  border-top-right-radius: 24px;
+}
+
+.graphic-bottom-road-right {
+  border-left: 2px dashed black;
+}
+
+.graphic-bottom-right {
+  border-top: 10px solid rgba(255, 0, 0, 0.6);
+  border-left: 10px solid rgba(255, 0, 0, 1);
+  border-top-left-radius: 24px;
 }
