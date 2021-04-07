@@ -53,15 +53,10 @@ function handleLogic(selected) {
       const approach = selectedApproach.querySelector(".approach-children");
       toggle(approach, "approach-selected");
 
-      const approachPlusMinusIcon = approach.querySelector(
-        ".approach-plus-minus"
-      ).firstChild;
-      approachPlusMinusIcon.nodeValue =
-        approachPlusMinusIcon.nodeValue === "+" ? "-" : "+";
+      const approachPlusMinusIcon = approach.querySelector(".approach-plus-minus").firstChild;
+      approachPlusMinusIcon.nodeValue = approachPlusMinusIcon.nodeValue === "+" ? "-" : "+";
 
-      const departures = selectedApproach.querySelector(
-        ".departures-container"
-      );
+      const departures = selectedApproach.querySelector(".departures-container");
       toggle(departures, "hide");
     });
   });
@@ -77,7 +72,8 @@ function toggle(elem, style) {
 }
 
 function expandAllIntersections() {
-  document.querySelectorAll(".approach-children").forEach(function (approach) {
+  document.querySelectorAll(".approach-children")
+  .forEach(function (approach) {
     if (!approach.classList.contains("approach-selected")) {
       approach.classList.add("approach-selected");
     }
@@ -93,7 +89,8 @@ function expandAllIntersections() {
 }
 
 function collapseAllIntersections() {
-  document.querySelectorAll(".approach-children").forEach(function (approach) {
+  document.querySelectorAll(".approach-children")
+  .forEach(function (approach) {
     if (approach.classList.contains("approach-selected")) {
       approach.classList.remove("approach-selected");
     }
@@ -109,9 +106,7 @@ function collapseAllIntersections() {
 }
 
 function changeAllIntersectionSign(sign) {
-  const approachPlusMinusIcon = document.querySelectorAll(
-    ".approach-plus-minus"
-  );
+  const approachPlusMinusIcon = document.querySelectorAll(".approach-plus-minus");
   approachPlusMinusIcon.forEach(function (item) {
     value = item.firstChild;
     value.nodeValue = sign;
